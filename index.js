@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = 4821;
+const PORT = process.env.PORT || 4821;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
