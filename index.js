@@ -14,12 +14,13 @@ app.use(cors());
 app.use(express.json());
 
 // Use routes
+app.use('/api/dashboard', require('./routes/dashboardRoutes'));
 app.use('/api/vehicles', vehicleRoutes);
 app.use('/api/slots', require('./routes/slotRoutes'));
 app.use('/api/bookings', require('./routes/bookingRoutes'));
-app.use('/analytics', require('./routes/aggregationRoutes'));
-api.get('/api/analytics/daily-payment')
-app.use('/analytics', require('./routes/aggregationRoutes'));
+// app.use('/analytics', require('./routes/aggregationRoutes'));
+// api.get('/api/analytics/daily-payment')
+// app.use('/analytics', require('./routes/aggregationRoutes'));
 
 // Start the server
 const PORT = process.env.PORT || 4821;
