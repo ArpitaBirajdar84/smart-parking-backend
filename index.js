@@ -17,12 +17,9 @@ app.use(express.json());
 app.use('/api/vehicles', vehicleRoutes);
 app.use('/api/slots', require('./routes/slotRoutes'));
 app.use('/api/bookings', require('./routes/bookingRoutes'));
+app.use('/api/slots', require('./routes/slotRoutes'));
+app.use('/api/bookings', require('./routes/bookingRoutes'));
 app.use('/api/analytics', require('./routes/aggregationRoutes'));
-
-// Default route
-app.get('/', (req, res) => {
-    res.send('Parking Backend is running');
-});
 
 // Start the server
 const PORT = process.env.PORT || 4821;
